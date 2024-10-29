@@ -4,11 +4,11 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 @AutoConfiguration
-public class LibraryTestConfiguration {
+public class HangulUtilsConfiguration {
 
     @Bean
-    public LibraryTestPrint testName() {
-        return new LibraryTestPrint();
+    public HangulUtils hangulUtils () {
+        return new HangulUtils();
     }
 
 }

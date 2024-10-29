@@ -24,7 +24,6 @@ dependencyManagement {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:3.0.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.2'
-    implementation 'org.projectlombok:lombok'
 
 }
 
