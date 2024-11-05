@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 public class HangulUtilsConfiguration {
 
     @Bean
-    public HangulUtils hangulUtils () {
-        return new HangulUtils();
+    public HangulUtilsImpl hangulUtils () {
+        return new HangulUtilsImpl();
     }
 
 }
