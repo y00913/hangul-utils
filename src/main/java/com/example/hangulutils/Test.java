@@ -1,4 +1,4 @@
-package com.example;
+package com.example.hangulutils;
 
 import java.util.Arrays;
 import java.util.List;

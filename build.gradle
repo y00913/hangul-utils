@@ -31,8 +31,8 @@ dependencies {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.example.hangul-utlls'
-            artifactId = 'hangul-utills'
+            groupId = 'com.example.hangulutils'
+            artifactId = 'hangul-utils'
             version = '0.0.1'
 
             from components.java

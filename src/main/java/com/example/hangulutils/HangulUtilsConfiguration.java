@@ -1,4 +1,4 @@
-package com.example;
+package com.example.hangulutils;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
