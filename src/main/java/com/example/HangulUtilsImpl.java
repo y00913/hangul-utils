@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HangulUtilsImpl implements HangulUtils{
+class HangulUtilsImpl implements HangulUtils{
 
     private static final List<Character> InitialList = Arrays.asList('ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ');
     private static final List<Character> doubleInitialList = Arrays.asList('ㄲ', 'ㄸ', 'ㅃ', 'ㅆ', 'ㅉ');
