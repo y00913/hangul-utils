@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.3' apply false
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'maven-publish'
 }
 
 group = 'com.example'
@@ -25,6 +26,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:3.0.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.2'
 
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.example.hangul-utlls'
+            artifactId = 'hangul-utills'
+            version = '0.0.1'
+
+            from components.java
+        }
+    }
 }
 
 tasks.named('test') {
