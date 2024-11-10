@@ -33,7 +33,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.example.hangulutils'
             artifactId = 'hangul-utils'
-            version = System.getenv("VERSION") ?: "0.2.1"
+            version = System.getenv("VERSION") ?: "0.3.0"
 
             from components.java
         }
