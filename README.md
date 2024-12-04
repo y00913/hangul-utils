@@ -1,8 +1,8 @@
 # hangul-utils
 
 ## 한글 관련 유틸 라이브러리
-<br/>
-### dependency 추가 방법
+
+### - dependency 추가 방법
 ```java
   // build.gradle 에 추가
   repositories {
@@ -15,8 +15,8 @@
     implementation 'com.github.y00913:hangul-utils:v0.3.2'
   }
 ```
-<br />
-### 기능들
+
+### - 기능들
 1. 한글 단어 리스트 중 주어진 초성으로 시작하는 단어 리스트를 리턴합니다.
 ```java
   List<String> tmp = HangulUtils.getListByCho('ㄱ',Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
