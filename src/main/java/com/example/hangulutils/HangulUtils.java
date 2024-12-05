@@ -30,14 +30,27 @@ public final class HangulUtils{
         }
 
         char firstChar = data.charAt(0);
-        int unicodeOffset = firstChar - KOREAN_START_UNICODE;
 
-        if (unicodeOffset < 0 || unicodeOffset >= INITIAL_LIST.size() * JUNGSUNG_UNICODE * JONGSUNG_UNICODE) {
+        if(!isKorean(firstChar)) {
             return ' ';
         }
 
-        int firstInitialIndex = unicodeOffset / (JUNGSUNG_UNICODE * JONGSUNG_UNICODE);
+        int firstCharUnicode = firstChar - KOREAN_START_UNICODE;
+        int firstInitialIndex = firstCharUnicode / (JUNGSUNG_UNICODE * JONGSUNG_UNICODE);
+
+        if (firstInitialIndex < 0 || firstInitialIndex >= INITIAL_LIST.size()) {
+            return ' ';
+        }
+
         return INITIAL_LIST.get(firstInitialIndex);
+    }
+
+    // 한글인지 확인
+    private static boolean isKorean(char ch) {
+        return (ch >= 0xAC00 && ch <= 0xD7A3) ||
+                (ch >= 0x1100 && ch <= 0x1112) ||
+                (ch >= 0x1161 && ch <= 0x1175) ||
+                (ch >= 0x11A8 && ch <= 0x11C2);
     }
 
     // 해당 초성과 매치되는지 확인
