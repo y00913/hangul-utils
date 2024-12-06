@@ -12,7 +12,7 @@
 
   dependencies {
     ...
-    implementation 'com.github.y00913:hangul-utils:v0.3.9'
+    implementation 'com.github.y00913:hangul-utils:v0.3.10'
   }
 ```
 

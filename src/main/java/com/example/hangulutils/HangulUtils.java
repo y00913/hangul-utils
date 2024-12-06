@@ -25,24 +25,26 @@ public final class HangulUtils{
 
     // 해당 문자열의 초성 리턴
     private static Character getFirstInitial(String data) {
+        char result = ' ';
+
         if (data == null || data.isEmpty()) {
-            return ' ';
+            return result;
         }
 
         char firstChar = data.charAt(0);
 
         if(!isKorean(firstChar)) {
-            return ' ';
+            return result;
         }
 
         int firstCharUnicode = firstChar - KOREAN_START_UNICODE;
         int firstInitialIndex = firstCharUnicode / (JUNGSUNG_UNICODE * JONGSUNG_UNICODE);
 
-        if (firstInitialIndex < 0 || firstInitialIndex >= INITIAL_LIST.size()) {
-            return ' ';
+        if (firstInitialIndex >= 0 && firstInitialIndex < INITIAL_LIST.size()) {
+            result = INITIAL_LIST.get(firstInitialIndex);
         }
 
-        return INITIAL_LIST.get(firstInitialIndex);
+        return result;
     }
 
     // 한글인지 확인
