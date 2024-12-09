@@ -1,5 +1,6 @@
 package com.example.hangulutils;
 
+import java.util.function.Function;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -16,10 +17,17 @@ public final class HangulUtils{
 
     }
 
-    // 해당 초성으로 시작하는 리스트 리턴
+    // 해당 초성으로 시작하는 리스트 리턴1
     public static List<String> getListByCho(Character chosung, List<String> list) {
         return list.stream()
                 .filter(data -> isEqual(chosung, getFirstInitial(data)))
+                .toList();
+    }
+
+    // 해당 초성으로 시작하는 리스트 리턴2
+    public static <T> List<T> getListByCho(Character chosung, Function<T, String> field , List<T> list) {
+        return list.stream()
+                .filter(data -> isEqual(chosung, getFirstInitial(field.apply(data))))
                 .toList();
     }
 
