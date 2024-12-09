@@ -12,7 +12,7 @@
 
   dependencies {
     ...
-    implementation 'com.github.y00913:hangul-utils:v0.4.0'
+    implementation 'com.github.y00913:hangul-utils:v0.4.1'
   }
 ```
 
@@ -20,16 +20,16 @@
 1. 한글 단어 리스트 중 주어진 초성으로 시작하는 단어 리스트를 리턴합니다.
 ```java
   class Example {
-    List<String> tmp = HangulUtils.getListByCho('ㄱ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
-    System.out.println(tmp.toString());
+    List<String> tmp1 = HangulUtils.getListByCho('ㄱ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
+    System.out.println(tmp1.toString());
     // 출력 결과 => [가가가, 까나나, 구도]
 
-    List<String> tmp = HangulUtils.getListByCho('ㄲ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
-    System.out.println(tmp.toString());
+    List<String> tmp2 = HangulUtils.getListByCho('ㄲ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
+    System.out.println(tmp2.toString());
     // 출력 결과 => [까나나]
 
-    List<String> tmp = HangulUtils.getListByCho('1', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
-    System.out.println(tmp.toString());
+    List<String> tmp3 = HangulUtils.getListByCho('1', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
+    System.out.println(tmp3.toString());
     // 출력 결과 => [] (한글로 된 단어만 찾습니다 .)
   }
 ```
@@ -49,19 +49,19 @@
       new User("다다다", 3),
       new User("나나", 4),
       new User("구도", 5),
-      new User("11", 6),
+      new User("11", 6)
     );
 
-    List<User> tmp = HangulUtils.getListByCho('ㄱ', User::getName, users);
-    System.out.println(tmp.toString());
+    List<User> tmp1 = HangulUtils.getListByCho('ㄱ', User::getName, users);
+    System.out.println(tmp1.toString());
     // 출력 결과 => [가가가, 까나나, 구도]
 
-    List<User> tmp = HangulUtils.getListByCho('ㄲ', User::getName, users);
-    System.out.println(tmp.toString());
+    List<User> tmp2 = HangulUtils.getListByCho('ㄲ', User::getName, users);
+    System.out.println(tmp2.toString());
     // 출력 결과 => [까나나]
 
-    List<User> tmp = HangulUtils.getListByCho('1', User::getName, users);
-    System.out.println(tmp.toString());
+    List<User> tmp3 = HangulUtils.getListByCho('1', User::getName, users);
+    System.out.println(tmp3.toString());
     // 출력 결과 => [] (한글로 된 단어만 찾습니다 .)
   }
 ```
