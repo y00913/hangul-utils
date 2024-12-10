@@ -12,34 +12,44 @@
 
   dependencies {
     ...
-    implementation 'com.github.y00913:hangul-utils:v0.4.1'
+    implementation 'com.github.y00913:hangul-utils:v0.4.2'
   }
 ```
 
 ### - 기능들
 1. 한글 단어 리스트 중 주어진 초성으로 시작하는 단어 리스트를 리턴합니다.
 ```java
-  class Example {
-    List<String> tmp1 = HangulUtils.getListByCho('ㄱ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
-    System.out.println(tmp1.toString());
-    // 출력 결과 => [가가가, 까나나, 구도]
+  List<String> tmp1 = HangulUtils.getListByCho('ㄱ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
+  System.out.println(tmp1.toString());
+  // 출력 결과 => [가가가, 까나나, 구도]
 
-    List<String> tmp2 = HangulUtils.getListByCho('ㄲ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
-    System.out.println(tmp2.toString());
-    // 출력 결과 => [까나나]
+  List<String> tmp2 = HangulUtils.getListByCho('ㄲ', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
+  System.out.println(tmp2.toString());
+  // 출력 결과 => [까나나]
 
-    List<String> tmp3 = HangulUtils.getListByCho('1', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
-    System.out.println(tmp3.toString());
-    // 출력 결과 => [] (한글로 된 단어만 찾습니다 .)
-  }
+  List<String> tmp3 = HangulUtils.getListByCho('1', Arrays.asList("가가가","까나나","다다다","나나","구도","11"));
+  System.out.println(tmp3.toString());
+  // 출력 결과 => [] (한글로 된 단어만 찾습니다 .)
 ```
 2. 객체 리스트 내 문자열로된 필드 중 주어진 초성으로 시작하는 단어 리스트를 리턴합니다.
 ```java
-  @Getter
-  @AllArgsConstructor
   class User {
     String name;
     int number;
+    
+    public User(String name, int number) {
+        this.name = name;
+        this.number = number;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s", this.name);
+    }
   }
 
   class Example {
